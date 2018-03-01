@@ -1,0 +1,22 @@
+Test plan for a fully implemented chess game
+
+Manual test consists of three large sections
+
+1. Correctly move every piece including capture
+2. Move all pieces in incorrect ways
+
+    * 1 and 2 could potentially be tested together by doing several bad moves first after which user should expect error message to pop out and then do a good move
+
+    * several sample edge bad move cases might include
+        # pawn move two tiles toward enemy without being in initial position
+        # pawn move backward
+        # pawn move vs. capture
+        # queen, rook and bishop move across the enemies
+        # all chessman move on ally
+
+3. Check checkmate for king under various situations
+    * create complicated checkmate situations
+
+
+4. Play the chess as a whole
+    * possible follow a classic match on the history
