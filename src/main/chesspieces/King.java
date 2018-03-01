@@ -13,7 +13,7 @@ public class King extends Chessman{
     @Override
     boolean validTrack(int[] position){
         //TODO check "check spot"
-        return (Math.abs(position[0]-this.position[0])==1 || Math.abs(position[0]-this.position[0])==0) && (Math.abs(position[1]-this.position[1])==1 || Math.abs(position[1]-this.position[1])==0) && Math.abs(position[0]-this.position[0])+Math.abs(position[1]-this.position[1])>=1 && !Game.board.getTile(position).isDangerous(this.side);
+        return (Math.abs(position[0]-this.position[0])==1 || Math.abs(position[0]-this.position[0])==0) && (Math.abs(position[1]-this.position[1])==1 || Math.abs(position[1]-this.position[1])==0) && Math.abs(position[0]-this.position[0])+Math.abs(position[1]-this.position[1])>=1;
     }
 
 }

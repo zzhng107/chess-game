@@ -24,6 +24,18 @@ class BishopTest {
         bishop.move(new int[]{7, 7});
         assertArrayEquals(new int[]{3, 3}, bishop.position);
         assertEquals(true, bishop != Game.board.getTile(new int[]{7, 7}).getChessman());
+        bishop.move(new int[]{0, 1});
+        assertArrayEquals(new int[]{3, 3}, bishop.position);
+
+        bishop.move(new int[]{5, 5});
+        assertArrayEquals(new int[]{5, 5}, bishop.position);
+        bishop.move(new int[]{3, 3});
+        assertArrayEquals(new int[]{3, 3}, bishop.position);
+        bishop.move(new int[]{1, 5});
+        assertArrayEquals(new int[]{1, 5}, bishop.position);
+        bishop.move(new int[]{3, 3});
+        assertArrayEquals(new int[]{3, 3}, bishop.position);
+
         Chessman blackPawn = Game.board.getTile(new int[]{6, 6}).getChessman();
         bishop.move(new int[]{6, 6});
         assertArrayEquals(new int[]{6, 6}, bishop.position);
@@ -32,4 +44,5 @@ class BishopTest {
         bishop.move(new int[]{3, 3});
         assertArrayEquals(new int[]{3, 3}, bishop.position);
     }
+
 }

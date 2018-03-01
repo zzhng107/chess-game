@@ -75,13 +75,18 @@ public abstract class Chessman {
             return false;
         }
 
+        this.leave(this.position);
         if(checkEnemy(position)){
             eat(position);
         }else {
             occupy(position);
         }
-
         return true;
+    }
+
+    //leave the tile
+    private void leave(int[] position){
+        Game.board.getTile(position).occupy(null);
     }
 
     //check mate

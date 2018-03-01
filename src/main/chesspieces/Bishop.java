@@ -1,7 +1,5 @@
 package main.chesspieces;
-
 import main.game.Game;
-
 //subclass for a bishop
 public class Bishop extends Chessman{
     //super class constructor

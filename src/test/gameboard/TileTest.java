@@ -16,18 +16,28 @@ class TileTest {
         Game.board.getTile(new int[]{0, 5}).resetDangerous(Game.side.WHITE);
         assertEquals(false, Game.board.getTile(new int[]{0, 5}).isDangerous(Game.side.WHITE));
 
+        Game.updateBannedTile(1);
+        assertEquals(true, Game.board.getTile(new int[]{0, 2}).isDangerous(Game.side.BLACK));
+        Game.board.getTile(new int[]{0, 2}).resetDangerous(Game.side.BLACK);
+        assertEquals(false, Game.board.getTile(new int[]{0, 2}).isDangerous(Game.side.BLACK));
+
     }
 
     @Test
     void setDangerous() {
         Game.board.getTile(new int[]{0, 5}).setDangerous(Game.side.BLACK);
         assertEquals(true, Game.board.getTile(new int[]{0, 5}).isDangerous(Game.side.WHITE));
+
+        Game.board.getTile(new int[]{0, 5}).setDangerous(Game.side.WHITE);
+        assertEquals(true, Game.board.getTile(new int[]{0, 5}).isDangerous(Game.side.BLACK));
     }
 
     @Test
     void isDangerous() {
         Game.updateBannedTile(0);
         assertEquals(true, Game.board.getTile(new int[]{0, 5}).isDangerous(Game.side.WHITE));
+        Game.updateBannedTile(1);
+        assertEquals(true, Game.board.getTile(new int[]{0, 2}).isDangerous(Game.side.BLACK));
     }
 
     @Test
